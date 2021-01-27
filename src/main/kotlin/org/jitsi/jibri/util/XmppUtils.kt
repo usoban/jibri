@@ -30,19 +30,16 @@ fun getCallUrlInfoFromJid(roomJid: EntityBareJid, stripFromRoomDomain: String, x
         // The call url is constructed from the xmpp domain, an optional subdomain, and a callname like so:
         // https://domain/subdomain/callName
         // The url domain is pulled from the xmpp domain of the connection sending the request
-        var domain = roomJid.domain.toString()
+        var domain = "test.dev.decblue.com" // roomJid.domain.toString()
         // But the room jid domain may have a subdomain that shouldn't be applied to the url, so strip out any
         // string we've been told to remove from the domain
-        domain = domain.replaceFirst(stripFromRoomDomain, "", ignoreCase = true)
+        //  domain = domain.replaceFirst(stripFromRoomDomain, "", ignoreCase = true)
         // Now we need to extract a potential call subdomain, which will be anything that's left in the domain
         //  at this point before the configured xmpp domain.
-        val subdomain = domain.subSequence(0, domain.indexOf(xmppDomain, ignoreCase = true)).trim('.')
+//        val subdomain = "" //domain.subSequence(0, domain.indexOf(xmppDomain, ignoreCase = true)).trim('.')
         // Now just grab the call name
         val callName = roomJid.localpart.toString()
-        return when {
-            subdomain.isEmpty() -> CallUrlInfo("https://$xmppDomain", callName)
-            else -> CallUrlInfo("https://$xmppDomain/$subdomain", callName)
-        }
+        return CallUrlInfo("https://$domain", callName)
     } catch (e: Exception) {
         throw CallUrlInfoFromJidException(
             "Unable to extract call url info from Jid $roomJid (stripFromRoomDomain = $stripFromRoomDomain, " +

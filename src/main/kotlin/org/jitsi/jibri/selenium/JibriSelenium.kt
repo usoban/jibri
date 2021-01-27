@@ -140,6 +140,11 @@ class JibriSelenium(
         val chromeOptions = ChromeOptions()
         chromeOptions.addArguments(chromeOpts)
         chromeOptions.setExperimentalOption("w3c", false)
+
+        logger.info("Steve says: attempt to tell Chrome to accept insecure certs")
+        chromeOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true)
+        chromeOptions.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true)
+
         chromeOptions.addArguments(jibriSeleniumOptions.extraChromeCommandLineFlags)
         val chromeDriverService = ChromeDriverService.Builder().withEnvironment(
             mapOf("DISPLAY" to jibriSeleniumOptions.display)

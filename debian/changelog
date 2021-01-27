@@ -1,5 +1,27 @@
-jibri (0.2.0-1) UNRELEASED; urgency=medium
+jibri (8.0-64-g268e33d-1) unstable; urgency=medium
 
+  * Built from git. 268e33d
+
+ -- root <root@1c6f928f51a3>  Wed, 27 Jan 2021 17:32:56 +0000
+
+jibri (8.0-64-g268e33d-1) unstable; urgency=medium
+
+  * Built from git. 268e33d
+
+ -- root <root@1c6f928f51a3>  Wed, 27 Jan 2021 16:09:28 +0000
+
+jibri (8.0-64-g268e33d-1) unstable; urgency=medium
+
+  * Built from git. 268e33d
+
+ -- root <root@1c6f928f51a3>  Wed, 27 Jan 2021 15:30:58 +0000
+
+jibri (8.0-64-g268e33d-1) unstable; urgency=medium
+
+  [ brian ]
   * Initial release. (Closes: #XXXXXX)
 
- -- brian <brian@brian-VirtualBox>  Tue, 27 Mar 2018 14:04:40 -0700
+  [ root ]
+  * Built from git. 268e33d
+
+ -- root <root@1c6f928f51a3>  Wed, 27 Jan 2021 14:46:39 +0000
